@@ -65,8 +65,32 @@
 <br/>
 <br/>
 
-## Rtk, Zustand, Recoil 등 클라이언트(UI 상태 등) 상태 관리
+## RTK, Zustand, Recoil 등 클라이언트(UI 상태 등) 상태 관리
+### RTK (Redux ToolKit)
 
+<br/>
+
+### Zustand
+- 단순화된 Flux 원리를 사용한 작고 빠르며 확장 가능한 상태 관리 솔루션
+- store는 훅(hook)이며, 원시값, 객체, 함수 등 아무거나 넣어도 됨
+- state는 불변으로(immutably) 업데이트 되어야함
+- set 함수는 상태를 병합하며, 두번째 파라미터에 true 전달 시 상태 모델을 교체해버림
+- redux와 다른 점
+  - 간단하며, 의견이 없음(= 사용법에 대해 강제하는게 많지 않다로 이해함)
+  - 상태를 다루는데 훅을 사용함
+  - context providers를 앱에 래핑하지 않아도 됨
+  - 비동기로 상태 변경 시 별도의 middleware없이 set 함수만 호출하면 됨
+  - 상태를 자주 변경하는 곳에서 컴포넌트를 강제로 리렌더링하지 않아도 상태 부분만 바인딩되도록 subscribe function을 제공함
+  => view를 직접 변경하는 곳에서 성능 개선 가능함
+  https://github.com/pmndrs/zustand?tab=readme-ov-file#transient-updates-for-often-occurring-state-changes
+- context와 다른 점
+  - 보일러 플레이트가 적음
+  - 오직 상태 변화가 있을 때만 컴포넌트 렌더링됨
+  - 중앙 집중식, action 기반 상태 관리
+
+(참고) 
+- https://github.com/pmndrs/zustand
+- https://ui.toast.com/posts/ko_20210812
 
 <br/>
 <br/>
