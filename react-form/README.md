@@ -6,6 +6,9 @@ https://ko.react.dev/learn/reacting-to-input-with-state
 ### (1) UnControlled Input
 - React state를 사용하지 않고 Dom에서 input 값을 관리하는 방식
 - 사용자의 입력이 발생하면 DOM 요소의 값은 사용자의 입력에 의해 변경됨
+- 주로 초기값을 설정하고 그 값은 컴포넌트 내부에서 관리되며 이후에는 사용자의 입력에 따라 내부 상태가 업데이트 되도록 설계됨   
+-> 외부에서 ref를 주입하여 해당 컴포넌트에 접근하는 것이 권장되지 않음 (외부에서 제어하는 것은 권장되지 않음)  
+-> RadioGroup의 경우, 선택된 값을 외부로 가져와야할 때 Controlled Components가 적합함
 - 아래 props들은 UnControlled Input에만 적용됨
   - defaultChecked: `boolean` 타입. `type="checkbox"`, `type="radio"`에서 초기값 지정함
   - defaultValue: `string` 타입. text input에 대한 초기값 지정함
@@ -34,6 +37,7 @@ const UnControlledInput = () => {
 
 ### (2) Controlled Input
 - React state를 사용하여 input 값을 직접 관리하는 방식
+- 외부에서 컴포넌트 상태를 제어하고자 할 때 적합함 (ex. RadioGroup(input[type="radio"][name="radio"]) 컴포넌트의 value를 갖고 오고자할 때)
 - 아래 props들은 Controlled Input에만 적용됨
   - checked: `boolean` 타입. `type="checkbox"`, `type="radio"`에서 선택 여부 제어
   - value: `string` 타입. text input에서 텍스트 제어 (라디오 버튼일 경우 폼 데이터 지정함)

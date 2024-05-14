@@ -1,5 +1,5 @@
-const ControlledCheck = ({ checked, handleChange }) => {
-  return <input type="checkbox" checked={checked} onChange={handleChange} />;
+const ControlledCheck = ({ name, checked, handleChange }) => {
+  return <input type="checkbox" {...{name, checked}} onChange={handleChange} />;
 };
 
 export default ControlledCheck;
